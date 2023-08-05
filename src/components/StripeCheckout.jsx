@@ -35,7 +35,7 @@ const CheckoutForm = () => {
         color: "#32325d",
         fontFamily: "Arial,sans-serif",
         fontSmoothing: "antialiased",
-        fontSize: "16px",
+        fontSize: "12px",
         "::placeholder": { color: "#32325d" },
       },
     },
@@ -91,13 +91,13 @@ const CheckoutForm = () => {
     <div>
       {succeeded ? (
         <article>
-          <h4>thank you</h4>
-          <h4>your payment was successful!</h4>
-          <h4>redirecting to home page shortly</h4>
+          <h5>thank you</h5>
+          <h6>your payment was successful!</h6>
+          <h6>redirecting to home page shortly</h6>
         </article>
       ) : (
         <article>
-          <h4>hello, {myUser && myUser.name}</h4>
+          <h5>hello, {myUser && myUser.name}</h5>
           <p>your total is {formatPrice(shipping_fee + total_amount)}</p>
           <p>test card number : 4242 4242 4242 4242</p>
         </article>
@@ -159,6 +159,9 @@ const Wrapper = styled.section`
     width: 100%;
     background: white;
     box-sizing: border-box;
+  }
+  p {
+    margin-bottom: 0.5rem;
   }
   .result-message {
     line-height: 22px;
@@ -272,7 +275,13 @@ const Wrapper = styled.section`
       transform: rotate(360deg);
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 991px) {
+    form {
+      width: 50vw;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
     form {
       width: 80vw;
     }

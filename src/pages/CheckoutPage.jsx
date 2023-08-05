@@ -9,7 +9,7 @@ const CheckoutPage = () => {
   return (
     <main>
       <PageHero title="checkout" />
-      <Wrapper className="page">
+      <Wrapper className="page ">
         {cart.length < 1 ? (
           <div className="empty ">
             <h2>your cart is empty</h2>
